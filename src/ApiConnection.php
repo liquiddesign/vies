@@ -20,7 +20,6 @@ class ApiConnection
 	 * @param string $method
 	 * @param string $endpoint
 	 * @param array<string, mixed> $params
-	 * @return \Psr\Http\Message\ResponseInterface
 	 * @throws \GuzzleHttp\Exception\GuzzleException
 	 */
 	public function request(string $method, string $endpoint, array $params = []): ResponseInterface
@@ -29,12 +28,20 @@ class ApiConnection
 			$this->client = new Client([
 				'auth' => [$this->login, $this->password],
 				'http_errors' => false,
-				'base_uri' => $this->baseUrl,
+				'accept' => 'application/json',
 			]);
 		}
 
-		return $this->client->request($method, $endpoint, [
-			'json' => $params,
-		]);
+		$requestOptions = [
+			'headers' => [
+				'Accept' => 'application/json',
+			],
+		];
+
+		if ($params !== null && \count($params) > 0) {
+			$requestOptions['json'] = $params;
+		}
+
+		return $this->client->request($method, \rtrim($this->baseUrl, '/') . $endpoint, $requestOptions);
 	}
 }

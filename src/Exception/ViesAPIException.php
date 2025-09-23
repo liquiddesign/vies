@@ -4,7 +4,7 @@ namespace Vies\Exception;
 
 use Throwable;
 
-class TraderNotFoundException extends \RuntimeException
+class ViesAPIException extends \RuntimeException
 {
 	public function __construct(int $internalCode, string $description, string $details, ?Throwable $previous = null)
 	{

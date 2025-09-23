@@ -22,7 +22,6 @@ class ViesResponse
 
 	/**
 	 * @param array<string, mixed> $data
-	 * @return self
 	 * @throws \InvalidArgumentException
 	 */
 	public static function fromArray(array $data): self
