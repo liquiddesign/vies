@@ -28,7 +28,6 @@ class ApiConnection
 			$this->client = new Client([
 				'auth' => [$this->login, $this->password],
 				'http_errors' => false,
-				'accept' => 'application/json',
 			]);
 		}
 
