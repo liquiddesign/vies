@@ -37,7 +37,7 @@ class ApiConnection
 			],
 		];
 
-		if ($params !== null && \count($params) > 0) {
+		if ($params !== []) {
 			$requestOptions['json'] = $params;
 		}
 

@@ -9,8 +9,8 @@
     "nette/http": "^3.2"
   },
   "require-dev": {
-    "phpstan/phpstan-nette": "^1.0",
-    "liquiddesign/codestyle": "^1.0"
+    "phpstan/phpstan-nette": "^2.0",
+    "liquiddesign/codestyle": "^4.0"
   },
   "minimum-stability": "dev",
   "prefer-stable" : true,

@@ -2,6 +2,7 @@ includes:
     - vendor/phpstan/phpstan-nette/extension.neon
 
 parameters:
+	tmpDir: %currentWorkingDirectory%/temp/phpstan
 	level: 8
 	paths:
 		- src
